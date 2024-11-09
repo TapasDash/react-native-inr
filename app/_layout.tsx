@@ -2,8 +2,12 @@ import "../global.css";
 
 import { useEffect } from "react";
 import { useFonts } from "expo-font";
+import { Stack } from "expo-router/stack";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
 // import "react-native-url-polyfill/auto";
-import { SplashScreen, Stack } from "expo-router";
+import { SplashScreen, Tabs } from "expo-router";
 
 // import GlobalProvider from "../context/GlobalProvider";
 
@@ -40,12 +44,37 @@ const RootLayout = () => {
   }
 
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="search/[query]" options={{ headerShown: false }} />
-    </Stack>
+    <Tabs screenOptions={{ tabBarActiveTintColor: "black" }}>
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "PNR Status",
+          headerShown: true,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name="newspaper-outline"
+              size={24}
+              color={color}
+              className=""
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="getTrainsBetweenStations"
+        options={{
+          title: "Get Trains Between Stations",
+          headerShown: true,
+          tabBarIcon: ({ color, focused }) => (
+            <MaterialCommunityIcons
+              name="train-car-passenger-door"
+              size={40}
+              color="black"
+            />
+          ),
+        }}
+      />
+    </Tabs>
   );
 };
 
