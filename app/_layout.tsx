@@ -51,12 +51,7 @@ const RootLayout = () => {
           title: "PNR Status",
           headerShown: true,
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name="newspaper-outline"
-              size={24}
-              color={color}
-              className=""
-            />
+            <Ionicons name="newspaper-outline" size={24} color={color} />
           ),
         }}
       />
@@ -66,11 +61,7 @@ const RootLayout = () => {
           title: "Get Trains Between Stations",
           headerShown: true,
           tabBarIcon: ({ color, focused }) => (
-            <MaterialCommunityIcons
-              name="train-car-passenger-door"
-              size={40}
-              color="black"
-            />
+            <Ionicons name="train-outline" size={29} color="black" />
           ),
         }}
       />
